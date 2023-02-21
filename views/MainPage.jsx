@@ -1,14 +1,14 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-function Index({title}) {
+function MainPage({title}) {
   return (
     <Layout>
       <div>
-        <h2>{title}</h2>
+        <h2>Главная</h2>
       </div>
     </Layout>
   );
 }
 
-module.exports = Index;
+module.exports = MainPage;

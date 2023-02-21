@@ -1,11 +1,11 @@
 const express = require('express');
+
 const route = express.Router();
 
-const render = require('../lib/render');
-const Index = require('../views/Index');
+const { isAuth } = require('../middlewares/midls');
 
-route.get('/', (req, res) => {
-  render(Index, {title: 'Welcome to Express - ReactSSR'}, res)
-  })
+const { renderMainPage } = require('../controllers/indexControllers');
+
+route.get('/', isAuth, renderMainPage);
 
 module.exports = route;
