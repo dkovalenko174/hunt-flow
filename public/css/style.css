@@ -29,6 +29,27 @@ a {
   height: 3vw;
 }
 
+.person-photo {
+  height: 10vh;
+  width: 10vh;
+  border-radius: 50%;
+}
+
+.person-photo-big {
+  height: 15vh;
+  width: 15vh;
+  border-radius: 30%;
+}
+
+.active {
+  border-bottom: 2px solid blue;
+}
+
+.persons {
+  max-height: 80vh;
+  overflow-y: scroll;
+}
+
 .container {
     padding-right: 15px;
     padding-left: 15px;

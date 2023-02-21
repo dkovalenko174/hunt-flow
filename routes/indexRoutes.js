@@ -4,8 +4,10 @@ const route = express.Router();
 
 const { isAuth } = require('../middlewares/midls');
 
-const { renderMainPage } = require('../controllers/indexControllers');
+const { renderMainPage, logOut } = require('../controllers/indexControllers');
 
-route.get('/', isAuth, renderMainPage);
+route.get('/', renderMainPage);
+
+route.get('/loguot', isAuth, logOut);
 
 module.exports = route;
