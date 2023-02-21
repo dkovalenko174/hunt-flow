@@ -1,9 +1,13 @@
 const homeLink = document.getElementById('home');
-const signInLink = document.getElementById('signin');
-const signUpLink = document.getElementById('signup');
+const signinLink = document.getElementById('signin');
+const signupLink = document.getElementById('signup');
 
 homeLink.addEventListener('click', goHome);
 
-signInLink.addEventListener('click', signIn);
+signinLink.addEventListener('click', signIn);
 
-signUpLink.addEventListener('click', signUp);
+signupLink.addEventListener('click', signUp);
+
+window.addEventListener('submit', enter);
+
+window.addEventListener('submit', register);

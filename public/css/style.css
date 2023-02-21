@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+
 body, html {
   margin: 0;
   padding: 0;
@@ -14,11 +16,25 @@ a {
   cursor: pointer;
 }
 
+.text-shadow {
+  text-shadow: 1px 1px 2px gainsboro;
+}
+
+.white-bg-opacity {
+  background-color: rgba(240, 248, 255, 0.8);
+}
+
+.ico {
+  width: 3vw;
+  height: 3vw;
+}
+
 .container {
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
+    font-family: 'Play', sans-serif;
   }
   @media (min-width: 768px) {
     .container {
