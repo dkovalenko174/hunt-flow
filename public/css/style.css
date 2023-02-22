@@ -1,24 +1,170 @@
 @import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
 
-body, html {
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
   height: 100%;
 }
 
-body {
+.my__guest-background {
+  width: 100%;
+  height: 731px;
   background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80');
   background-size: cover;
-  background-attachment: fixed;
+  object-fit: cover;
+}
+
+.my__guest-box {
+  margin-top: 60px;
+  padding: 22px 24px;
+  margin-left: 12px;
+  width: 380px;
+  background-color: rgba(174, 175, 172, 0.56);
+}
+
+.guest__box-title {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.guest__box-subtitle {
+  margin-top: 16px;
+}
+
+.guest__box-text {
+  margin-top: 16px;
+}
+
+.guest__btn {
+  width: 380px;
+  margin-top: 16px;
+  margin-left: 12px;
+}
+
+.my__main-background{
+  background-color: rgba(174, 175, 172, 0.3);
+  height: 82vh;
+}
+
+ul {
+  margin: 12px 0 0 0;
+  padding: 0 0 12px 0;
+  height: 100%;
+  border-bottom: 1px solid #322D22;
+}
+
+li {
+  list-style: none;
+  transition: 0.1s;
+}
+
+li:not(:last-child) {
+  margin-right: 12px;
+}
+
+li:hover {
+  color: #177347;
+}
+
+footer {
+  height: 66px;
 }
 
 a {
   cursor: pointer;
 }
 
+.main__column-left {
+  width: 40%;
+  height: 74vh;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.main__column-left::-webkit-scrollbar {
+  display: none;
+}
+
+
+.main__column-right {
+  border-left: 1px solid #322D22;
+  width: 100%;
+}
+
+.user__preview {
+  width: 300px;
+  height: 120px;
+  transition: 1s;
+}
+
+.user__preview:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+.user__preview-foto {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: solid #322D22;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.preview-ref-fio {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.user__card {
+  height: 100%;
+}
+
+.card-ref-title span {
+  font-weight: 600;
+}
+
+.card-ref-fio {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.card-ref-foto {
+  border: solid #322D22;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  width: 160px;
+  height: 160px;
+}
+
+.user__card-events {
+  background-color: rgba(255, 255, 255, 0.35);
+  border-radius: 10px;
+  height: 100%;
+}
+
+.stage-title {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.card-events-stage {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.37);
+}
+
+.message-employe {
+  color: rgba(0, 0, 0, 0.37);
+}
+
 .text-shadow {
   text-shadow: 1px 1px 2px gainsboro;
 }
+
 
 .white-bg-opacity {
   background-color: rgba(240, 248, 255, 0.8);
