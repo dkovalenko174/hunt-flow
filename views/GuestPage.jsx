@@ -20,22 +20,28 @@ function GuestPage({}) {
           </nav>
         </div>
         <div className="my__guest-background">
-          <div className="container">
-            <div className="my__guest-box">
-              <div className="guest__box-title">
-                Система автоматизации рекрутмента
+          <div className="container d-flex justify-content-between">
+            <div className="guest__column-left">
+              <div className="my__guest-box">
+                <div className="guest__box-title">
+                  Система автоматизации рекрутмента
+                </div>
+                <div className="guest__box-subtitle">
+                  Центр Лидеров — рекрутинговая система, которая помогает закрывать больше вакансий за меньшее время
+                </div>
+                <div className="guest__box-subtitle">
+                  Чтобы конкурировать за кандидатов, нужно действовать быстро. Хантфлоу автоматизирует всю рутину и фокусирует рекрутеров на действительно важных задачах
+                </div>
+                <div className="guest__box-text">
+                  *Чтобы использовать функционал сайта - необходимо войти или зарегистрироваться
+                </div>
               </div>
-              <div className="guest__box-subtitle">
-                Центр Лидеров — рекрутинговая система, которая помогает закрывать больше вакансий за меньшее время
-              </div>
-              <div className="guest__box-subtitle">
-                Чтобы конкурировать за кандидатов, нужно действовать быстро. Хантфлоу автоматизирует всю рутину и фокусирует рекрутеров на действительно важных задачах
-              </div>
-              <div className="guest__box-text">
-                *Чтобы использовать функционал сайта - необходимо войти или зарегистрироваться
-              </div>
+              <button id="btn_signup" type="button" className="btn btn-warning guest__btn">Зарегистрироваться</button>
             </div>
-            <button type="button" className="btn btn-warning guest__btn">Зарегистрироваться</button>
+            <div className="guest__column-right">
+              {/* <div id="resultWindow" /> */}
+
+            </div>
           </div>
         </div>
         <div className="container d-flex justify-content-end">

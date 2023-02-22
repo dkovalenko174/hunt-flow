@@ -21,91 +21,44 @@ function MainPage({ applicants }) {
         <div className="my__main-background">
           <div className="container d-flex flex-column">
             <ul className="d-flex flex-wrap justify-content-between align-items-center">
-              <li><a id="first" className="nav-link">Все</a></li>
-              <li><a id="second" className="nav-link">Новые</a></li>
-              <li><a id="third" className="nav-link">Видео интервью</a></li>
-              <li><a id="thourth" className="nav-link">У заказчика</a></li>
-              <li><a id="fifth" className="nav-link">Интервью с заказчиком</a></li>
-              <li><a id="sisth" className="nav-link">Звонок скрининг</a></li>
-              <li><a id="seventh" className="nav-link">Офер</a></li>
-              <li><a id="eighth" className="nav-link">Принял Офер</a></li>
-              <li><a id="nine" className="nav-link">Выход на работу</a></li>
-              <li><a id="ten" className="nav-link">Отказ</a></li>
+              <li><a id="allUsers" className="nav-link">Все</a></li>
+              <li><a id="newUsers" className="nav-link">Новые</a></li>
+              <li><a id="usersToInterview" className="nav-link">Видео интервью</a></li>
+              <li><a id="usersIntresting" className="nav-link">У заказчика</a></li>
+              <li><a id="usersToInterviewCustomer" className="nav-link">Интервью с заказчиком</a></li>
+              <li><a id="usersToCall" className="nav-link">Звонок скрининг</a></li>
+              <li><a id="usersSentOffer" className="nav-link">Офер</a></li>
+              <li><a id="usersAcceptedOffer" className="nav-link">Принял Офер</a></li>
+              <li><a id="usersGoToWork" className="nav-link">Выход на работу</a></li>
+              <li><a id="usersRefusal" className="nav-link">Отказ</a></li>
             </ul>
             <div className="fix-1 d-flex flex-row">
               <div className="main__column-left">
-                <div className="user__preview d-flex flex-rows align-items-center justify-content-start p-3 gap-3">
-                  <div className="user__preview-foto" />
-                  <div className="user__preview-ref">
-                    <div className="preview-ref-fio">Платонов Андрей</div>
-                    <div className="preview-ref-position">Java Developer</div>
-                    <div className="preview-ref-company">AllSoft</div>
+                {/*      {applicants.map((el) => ( */}
+                {/*        <div key={el.id} data-function="person" className="d-flex align-items-center p-2 mb-2 white-bg-opacity rounded"> */}
+                {/*          <img src={el.applPhoto} alt="кандидат" className="person-photo" /> */}
+                {/*          <p className="mb-0 ms-2"> */}
+                {/*            {el.applName} */}
+                {/*            {' '} */}
+                {/*            {el.applLastName} */}
+                {/*          </p> */}
+                {/*        </div> */}
+                {/*      ))} */}
+
+                {applicants.map((user) => (
+                  <div key={user.id} className="user__preview d-flex flex-rows align-items-center justify-content-start p-3 gap-3">
+                    <div className="user__preview-foto" />
+                    <div className="user__preview-ref">
+                      <div className="preview-ref-fio">
+                        {user.applName}
+                        {' '}
+                        {user.applLastName}
+                      </div>
+                      <div className="preview-ref-position">Java Developer</div>
+                      <div className="preview-ref-company">AllSoft</div>
+                    </div>
                   </div>
-                </div>
-                <div className="user__preview d-flex flex-rows align-items-center justify-content-start p-3 gap-3">
-                  <div className="user__preview-foto" />
-                  <div className="user__preview-ref">
-                    <div className="preview-ref-fio">Кленова Ольга</div>
-                    <div className="preview-ref-position">Директор</div>
-                    <div className="preview-ref-company">Digital Pro</div>
-                  </div>
-                </div>
-                <div className="user__preview d-flex flex-rows align-items-center justify-content-start p-3 gap-3">
-                  <div className="user__preview-foto" />
-                  <div className="user__preview-ref">
-                    <div className="preview-ref-fio">Идов Василий</div>
-                    <div className="preview-ref-position">Маркетолог</div>
-                    <div className="preview-ref-company">DMLR</div>
-                  </div>
-                </div>
-                <div className="user__preview d-flex flex-rows align-items-center justify-content-start p-3 gap-3">
-                  <div className="user__preview-foto" />
-                  <div className="user__preview-ref">
-                    <div className="preview-ref-fio">Серов Иван</div>
-                    <div className="preview-ref-position">Менеджер</div>
-                    <div className="preview-ref-company">FoxFinance</div>
-                  </div>
-                </div>
-                <div className="user__preview d-flex flex-rows align-items-center justify-content-start p-3 gap-3">
-                  <div className="user__preview-foto" />
-                  <div className="user__preview-ref">
-                    <div className="preview-ref-fio">Федорова Анна</div>
-                    <div className="preview-ref-position">Senior Frontend</div>
-                    <div className="preview-ref-company">Google</div>
-                  </div>
-                </div>
-                <div className="user__preview d-flex flex-rows align-items-center justify-content-start p-3 gap-3">
-                  <div className="user__preview-foto" />
-                  <div className="user__preview-ref">
-                    <div className="preview-ref-fio">Федорова Анна</div>
-                    <div className="preview-ref-position">Senior Frontend</div>
-                    <div className="preview-ref-company">Google</div>
-                  </div>
-                </div>
-                <div className="user__preview d-flex flex-rows align-items-center justify-content-start p-3 gap-3">
-                  <div className="user__preview-foto" />
-                  <div className="user__preview-ref">
-                    <div className="preview-ref-fio">Идов Василий</div>
-                    <div className="preview-ref-position">Маркетолог</div>
-                    <div className="preview-ref-company">DMLR</div>
-                  </div>
-                </div>
-                <div className="user__preview d-flex flex-rows align-items-center justify-content-start p-3 gap-3">
-                  <div className="user__preview-foto" />
-                  <div className="user__preview-ref">
-                    <div className="preview-ref-fio">Идов Василий</div>
-                    <div className="preview-ref-position">Маркетолог</div>
-                    <div className="preview-ref-company">DMLR</div>
-                  </div>
-                </div>
-                <div className="user__preview d-flex flex-rows align-items-center justify-content-start p-3 gap-3">
-                  <div className="user__preview-foto" />
-                  <div className="user__preview-ref">
-                    <div className="preview-ref-fio">Идов Василий</div>
-                    <div className="preview-ref-position">Маркетолог</div>
-                    <div className="preview-ref-company">DMLR</div>
-                  </div>
-                </div>
+                ))}
               </div>
               <div className="main__column-right me-auto p-3">
                 <div className="user__card d-flex flex-column gap-3 p-3">
@@ -268,6 +221,16 @@ function MainPage({ applicants }) {
       {/* </main> */}
       <script src="/js/goHome.js" />
       <script src="/js/user/logOut.js" />
+      <script src="/js/user/getAllUsers.js" />
+      <script src="/js/user/getNewUsers.js" />
+      <script src="/js/user/getUsersToInterview.js" />
+      <script src="/js/user/getUsersIntresting.js" />
+      <script src="/js/user/getUsersToInterviewCustomer.js" />
+      <script src="/js/user/getUsersToCall.js" />
+      <script src="/js/user/getUsersSentOffer.js" />
+      <script src="/js/user/getUsersAcceptedOffer.js" />
+      <script src="/js/user/getUsersGoToWork.js" />
+      <script src="/js/user/getUsersRefusal.js" />
       <script src="/js/user/user.js" />
     </Layout>
   );

@@ -51,6 +51,26 @@ body, html {
   height: 82vh;
 }
 
+.guest__column-right {
+  background-color: rgba(174, 175, 172, 0.94);
+  margin-top: 60px;
+  margin-left: 32px;
+  padding: 24px;
+  width: 100%;
+  display: none;
+}
+
+/* Форма Регистрации*/
+/*.formSignUp {*/
+/*  visibility: hidden;*/
+/*}*/
+
+/* Форма входа */
+/*.formSignIn {*/
+/*  visibility: hidden;*/
+/*}*/
+
+/* Списки главного меню */
 ul {
   margin: 12px 0 0 0;
   padding: 0 0 12px 0;
