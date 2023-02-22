@@ -1,5 +1,5 @@
 {
-  "name": "Express-ReactSSR",
+  "name": "HuntFlow",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -27,6 +27,12 @@
     "sequelize": "^6.28.0"
   },
   "devDependencies": {
+    "eslint": "^8.34.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "nodemon": "^2.0.20",
     "sequelize-cli": "^6.6.0"
   }
