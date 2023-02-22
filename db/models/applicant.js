@@ -14,8 +14,6 @@ module.exports = (sequelize, DataTypes) => {
       this.belongsTo(models.Stage, { foreignKey: 'stageId' });
       this.hasOne(models.Commentary, { foreignKey: 'applId' });
       this.hasOne(models.Call, { foreignKey: 'applId' });
-      // define association here
-    }
   }
   Applicant.init({
     applPhoto: DataTypes.STRING,
