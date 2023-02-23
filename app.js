@@ -68,7 +68,7 @@ app.use(express.json());
 app.use('/', indexRoutes);
 app.use('/guest', guestRoutes);
 
-const PORT = process.env.PORT || 3100;
+const PORT = process.env.PORT
 app.listen(PORT, (err) => {
   if (err) return console.log('Ошибка запуска сервера.', err.message);
   console.log(`Сервер запущен на http://localhost:${PORT} `);
