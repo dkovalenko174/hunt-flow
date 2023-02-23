@@ -1,5 +1,6 @@
 const express = require('express');
 
+const app = express();
 require('@babel/register');
 const morgan = require('morgan');
 const multer = require('multer');
