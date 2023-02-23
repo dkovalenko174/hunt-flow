@@ -1,8 +1,9 @@
 const express = require('express');
 
-const app = express();
 require('@babel/register');
 const morgan = require('morgan');
+const multer = require('multer');
+const bodyParser = require('body-parser');
 const path = require('path');
 require('dotenv').config();
 const session = require('express-session');
@@ -11,6 +12,8 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const passport = require('passport');
 // const { checkSession } = require('./middlewares/midls');
 
+const app = express();
+const upload = multer({ dest: 'uploads/' });
 // импорт вспомогательных ф-й
 const dbCheck = require('./db/dbCheck');
 
@@ -63,12 +66,31 @@ app.use(express.static(path.resolve('public')));
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 // роутеры
 app.use('/', indexRoutes);
 app.use('/guest', guestRoutes);
 
-const PORT = process.env.PORT
+app.post('/upload', upload.single('pdf'), async (req, res) => {
+  console.log('upLoad');
+  const {
+    applLastName, appName, phone, applEmail, about,
+  } = req.body;
+  const pdfPath = req.file.path;
+  const pdfName = req.file.originalname;
+  try {
+    console.log('--> Form DataIn', {
+      applLastName, appName, phone, applEmail, about,
+    });
+    res.sendStatus(200);
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+const PORT = process.env.PORT || 3100;
 app.listen(PORT, (err) => {
   if (err) return console.log('Ошибка запуска сервера.', err.message);
   console.log(`Сервер запущен на http://localhost:${PORT} `);

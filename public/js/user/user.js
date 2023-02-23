@@ -10,6 +10,7 @@ const usersSentOffer = document.getElementById('usersSentOffer');
 const usersAcceptedOffer = document.getElementById('usersAcceptedOffer');
 const usersGoToWork = document.getElementById('usersGoToWork');
 const usersRefusal = document.getElementById('usersRefusal');
+const FormApplicant = document.getElementById('getFormApplicant');
 
 homeLink.addEventListener('click', goHome);
 
@@ -34,3 +35,7 @@ usersAcceptedOffer.addEventListener('click', getUsersAcceptedOffer);
 usersGoToWork.addEventListener('click', getUsersGoToWork);
 
 usersRefusal.addEventListener('click', getUsersRefusal);
+
+FormApplicant.addEventListener('click', getFormApplicant);
+
+window.addEventListener('submit', uploadFormData);
