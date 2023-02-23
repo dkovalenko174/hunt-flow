@@ -13,6 +13,9 @@ function MainPage({ applicants }) {
             </a>
             <div className="d-flex align-items-center">
               <div className="d-flex flex-wrap align-items-center">
+                <a id="getFormApplicant" className="nav-link me-2">Добавить соискателя</a>
+              </div>
+              <div className="d-flex flex-wrap align-items-center">
                 <a id="logout" className="nav-link me-2">Выйти</a>
               </div>
             </div>
@@ -231,6 +234,8 @@ function MainPage({ applicants }) {
       <script src="/js/user/getUsersAcceptedOffer.js" />
       <script src="/js/user/getUsersGoToWork.js" />
       <script src="/js/user/getUsersRefusal.js" />
+      <script src="/js/user/getFormApplicant.js" />
+      <script src="/js/user/uploadFormData.js" />
       <script src="/js/user/user.js" />
     </Layout>
   );
