@@ -4,7 +4,7 @@ function getFormApplicant() {
   userCard.remove();
   const addUserEl = document.createElement('div');
   addUserEl.innerHTML = `
-  <form class="formAddApplicant">
+  <form class="formAddApplicant" >
   <div class="row mb-3">
     <div class="col">
       <input type="text" name="applLastName" class="form-control" placeholder="Фамилия" />

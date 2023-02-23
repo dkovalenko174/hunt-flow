@@ -1,4 +1,5 @@
 const express = require('express');
+const fileUpload = require('express-fileupload');
 
 require('@babel/register');
 const morgan = require('morgan');
@@ -13,7 +14,8 @@ const passport = require('passport');
 // const { checkSession } = require('./middlewares/midls');
 
 const app = express();
-const upload = multer({ dest: 'uploads/' });
+const upload = multer({ dest: 'public/files/pdf/' });
+// app.use(fileUpload());
 // импорт вспомогательных ф-й
 const dbCheck = require('./db/dbCheck');
 
@@ -66,24 +68,24 @@ app.use(express.static(path.resolve('public')));
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
 
 // роутеры
 app.use('/', indexRoutes);
 app.use('/guest', guestRoutes);
 
 app.post('/upload', upload.single('pdf'), async (req, res) => {
-  console.log('upLoad');
-  const {
-    applLastName, appName, phone, applEmail, about,
-  } = req.body;
-  const pdfPath = req.file.path;
-  const pdfName = req.file.originalname;
+  // console.log('upLoad');
+  // const {
+  //   applLastName, appName, phone, applEmail, about,
+  // } = req.body;
+  console.log('input file->>', req.file, req.body);
+  // console.log('Body', req.body.pdf);
+  // const pdfPath = req.file.path;
+  // const pdfName = req.file.originalname;
   try {
-    console.log('--> Form DataIn', {
-      applLastName, appName, phone, applEmail, about,
-    });
+    // console.log('--> Form DataIn', {
+    //   applLastName, appName, phone, applEmail, about,
+    // });
     res.sendStatus(200);
   } catch (error) {
     console.log(error);
