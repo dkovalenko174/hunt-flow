@@ -1,16 +1,24 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-function MainPage({ applicants }) {
+function MainPage({ appl, name }) {
   return (
     <Layout>
       <div className="d-flex flex-column mb-3">
         <div className="container">
           <nav className="navbar d-flex flex-wrap">
-            <a id="home" className="navbar-brand">
-              <img src="https://cdn-icons-png.flaticon.com/512/3135/3135788.png" alt="Logo" height="40" className="d-inline-block align-text-center me-2" />
-              ЦЛ
-            </a>
+            <div className="logo d-flex align-items-center">
+              <a id="home" className="navbar-brand">
+                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135788.png" alt="Logo" height="40" className="d-inline-block align-text-center me-2" />
+                ЦЛ
+              </a>
+              <div className="nameUser me-2">
+                Хорошо поработать -
+                {' '}
+                {name}
+              </div>
+
+            </div>
             <div className="d-flex align-items-center">
               <div className="d-flex flex-wrap align-items-center">
                 <a id="getFormApplicant" className="nav-link me-2">Добавить соискателя</a>
@@ -30,8 +38,8 @@ function MainPage({ applicants }) {
               <li><a id="usersIntresting" className="nav-link">У заказчика</a></li>
               <li><a id="usersToInterviewCustomer" className="nav-link">Интервью с заказчиком</a></li>
               <li><a id="usersToCall" className="nav-link">Звонок скрининг</a></li>
-              <li><a id="usersSentOffer" className="nav-link">Офер</a></li>
-              <li><a id="usersAcceptedOffer" className="nav-link">Принял Офер</a></li>
+              <li><a id="usersSentOffer" className="nav-link">Оффер</a></li>
+              <li><a id="usersAcceptedOffer" className="nav-link">Принял Оффер</a></li>
               <li><a id="usersGoToWork" className="nav-link">Выход на работу</a></li>
               <li><a id="usersRefusal" className="nav-link">Отказ</a></li>
             </ul>
@@ -48,7 +56,7 @@ function MainPage({ applicants }) {
                 {/*        </div> */}
                 {/*      ))} */}
 
-                {applicants.map((user) => (
+                {appl.map((user) => (
                   <div key={user.id} className="user__preview d-flex flex-rows align-items-center justify-content-start p-3 gap-3">
                     <div className="user__preview-foto" />
                     <div className="user__preview-ref">
@@ -58,7 +66,7 @@ function MainPage({ applicants }) {
                         {user.applLastName}
                       </div>
                       <div className="preview-ref-position">Java Developer</div>
-                      <div className="preview-ref-company">AllSoft</div>
+                      {/* <div className="preview-ref-company">AllSoft</div> */}
                     </div>
                   </div>
                 ))}

@@ -1,5 +1,4 @@
 const express = require('express');
-const fileUpload = require('express-fileupload');
 
 require('@babel/register');
 const morgan = require('morgan');
@@ -13,15 +12,18 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const passport = require('passport');
 // const { checkSession } = require('./middlewares/midls');
 
+const { Applicant } = require('./db/models');
+
 const app = express();
 const upload = multer({ dest: 'public/files/pdf/' });
-// app.use(fileUpload());
+
 // импорт вспомогательных ф-й
 const dbCheck = require('./db/dbCheck');
 
 // импорт роутов
 const indexRoutes = require('./routes/indexRoutes');
 const guestRoutes = require('./routes/guestRoutes');
+const apiRoutes = require('./routes/apiRoutes');
 
 // вызов функции проверки соединения с базоый данных
 dbCheck();
@@ -45,21 +47,21 @@ dbCheck();
 //   done(null, user);
 // });
 
-// const sessionConfig = {
-//   name: 'sid',
-//   store: new FileStore({}),
-//   secret: process.env.SECRET,
-//   resave: false,
-//   saveUninitialized: false,
-//   httpOnly: true,
-//   cookie: {
-//     secure: false,
-//     maxAge: 1000 * 60 * 60 * 24 * 10,
-//   },
-// };
+const sessionConfig = {
+  name: 'sid',
+  store: new FileStore({}),
+  secret: process.env.SECRET,
+  resave: false,
+  saveUninitialized: false,
+  httpOnly: true,
+  cookie: {
+    secure: false,
+    maxAge: 1000 * 60 * 60 * 24 * 10,
+  },
+};
 
-// app.use(session(sessionConfig));
-// app.use(passport.initialize());
+app.use(session(sessionConfig));
+app.use(passport.initialize());
 // app.use(passport.session());
 
 // app.use(checkSession);
@@ -72,20 +74,32 @@ app.use(express.json());
 // роутеры
 app.use('/', indexRoutes);
 app.use('/guest', guestRoutes);
+app.use('/api', apiRoutes);
 
+// TODO: Перенести в Controller
 app.post('/upload', upload.single('pdf'), async (req, res) => {
-  // console.log('upLoad');
-  // const {
-  //   applLastName, appName, phone, applEmail, about,
-  // } = req.body;
-  console.log('input file->>', req.file, req.body);
-  // console.log('Body', req.body.pdf);
-  // const pdfPath = req.file.path;
-  // const pdfName = req.file.originalname;
+  const {
+    applName, applLastName, experience, phone, applEmail, about, stageId,
+  } = req.body;
+  const pdf = req.file.path;
+  // console.log({
+  //   appName, applLastName, experience, phone, applEmail, path, about, stageId,
+  // });
+  // console.log('input file->>', req.file, req.body);
   try {
-    // console.log('--> Form DataIn', {
-    //   applLastName, appName, phone, applEmail, about,
-    // });
+    const applicant = await Applicant.create({
+      applPhoto: null,
+      applName,
+      applLastName,
+      experience,
+      phone,
+      applEmail,
+      pdf,
+      about,
+      stageId,
+      userId: 1,
+    });
+    console.log(applicant);
     res.sendStatus(200);
   } catch (error) {
     console.log(error);
