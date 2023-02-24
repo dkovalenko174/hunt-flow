@@ -1,4 +1,5 @@
-async function getAllUsers() {
+async function filter(event) {
+  event.preventDefault();
   const mainColumnLeftApll = document.querySelector('.main__column-left');
   // Нашли всех детей
   const children = mainColumnLeftApll.childNodes;
@@ -6,9 +7,11 @@ async function getAllUsers() {
   while (mainColumnLeftApll.firstChild) {
     mainColumnLeftApll.removeChild(mainColumnLeftApll.firstChild);
   }
+  const { id } = event.target;
+  // console.log(id);
 
   try {
-    const response = await fetch('/api/allusers');
+    const response = await fetch(`/api/filter/${id}`);
     const result = await response.json();
     // const result = await response.status;
     // console.log(result);

@@ -81,7 +81,7 @@ app.post('/upload', upload.single('pdf'), async (req, res) => {
   const {
     applName, applLastName, experience, phone, applEmail, about, stageId,
   } = req.body;
-  const pdf = req.file.path;
+  const pdf = req.file?.path;
   // console.log({
   //   appName, applLastName, experience, phone, applEmail, path, about, stageId,
   // });
@@ -99,7 +99,7 @@ app.post('/upload', upload.single('pdf'), async (req, res) => {
       stageId,
       userId: 1,
     });
-    console.log(applicant);
+    // console.log(applicant);
     res.sendStatus(200);
   } catch (error) {
     console.log(error);

@@ -1,40 +1,25 @@
 const homeLink = document.getElementById('home');
 const logoutLink = document.getElementById('logout');
-const allUsers = document.getElementById('allUsers');
-const newUsers = document.getElementById('newUsers');
-const usersToInterview = document.getElementById('usersToInterview');
-const usersIntresting = document.getElementById('usersIntresting');
-const usersToInterviewCustomer = document.getElementById('usersToInterviewCustomer');
-const usersToCall = document.getElementById('usersToCall');
-const usersSentOffer = document.getElementById('usersSentOffer');
-const usersAcceptedOffer = document.getElementById('usersAcceptedOffer');
-const usersGoToWork = document.getElementById('usersGoToWork');
-const usersRefusal = document.getElementById('usersRefusal');
+
 const FormApplicant = document.getElementById('getFormApplicant');
+
+const allUsers = document.getElementById('allUsers');
+
+const menuStage = document.getElementById('menuStage');
+
+const userPreview = document.getElementById('main__column-left');
 
 homeLink.addEventListener('click', goHome);
 
 logoutLink.addEventListener('click', logOut);
 
+window.addEventListener('change', selectStageApp);
+
 allUsers.addEventListener('click', getAllUsers);
 
-newUsers.addEventListener('click', getNewUsers);
+menuStage.addEventListener('click', filter);
 
-usersToInterview.addEventListener('click', getUsersToInterview);
-
-usersIntresting.addEventListener('click', getUsersIntresting);
-
-usersToInterviewCustomer.addEventListener('click', getUsersToInterviewCustomer);
-
-usersToCall.addEventListener('click', getUsersToCall);
-
-usersSentOffer.addEventListener('click', getUsersSentOffer);
-
-usersAcceptedOffer.addEventListener('click', getUsersAcceptedOffer);
-
-usersGoToWork.addEventListener('click', getUsersGoToWork);
-
-usersRefusal.addEventListener('click', getUsersRefusal);
+userPreview.addEventListener('click', getUserPreview);
 
 FormApplicant.addEventListener('click', getFormApplicant);
 

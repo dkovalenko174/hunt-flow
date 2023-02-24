@@ -270,7 +270,7 @@ exports.renderMainPage = async (req, res) => {
   const { id, name } = req.session.user;
   try {
     const appl = await Applicant.findAll();
-    console.log('Applicants---> ', appl);
+    // console.log('Applicants---> ', appl);
     render(MainPage, { appl, name }, res);
   } catch (err) {
     console.log('Не могу получить доступ к Application', err);
