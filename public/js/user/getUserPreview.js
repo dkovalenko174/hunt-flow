@@ -13,7 +13,7 @@ async function getUserPreview(event) {
     // console.log(result);
     userCard.innerHTML = `
       <div class="row">
-        <div class="card-ref-title col-9">
+        <div class="card-ref-title col-9 ms-3">
             <div class="card-ref-fio row mb-2">${result.applLastName} ${result.applName}</div>
             <div class="card-ref-salary row">
                 <div class="col-6 text-start">Зарплата:</div>
@@ -32,7 +32,9 @@ async function getUserPreview(event) {
                 <div class="col-6 text-end">Уренгой</div>
             </div>
         </div>
-        <div class="col-3 d-grid card-ref-foto" />
+        <div id="card-ref-foto" class="col-3 d-grid card-ref-foto" style="background-image: url(${result.applPhoto}); background-size: cover; background-position: center;">
+<!--            <img src="" alt="Аватар" class="person-photo"/>-->
+        </div>
       </div>
       </div>
       <div class="row p-2">

@@ -5,6 +5,9 @@ function getFormApplicant() {
   const addUserEl = document.createElement('div');
   addUserEl.innerHTML = `
   <form class="formAddApplicant" >
+  <div class="row mb-2 me-1 text-end justify-content-end">
+    <button id="btn-close-form" type="button" class="btn-close" aria-label="Close"></button>
+  </div>
   <div class="row mb-3">
     <div class="col">
       <input type="text" name="applLastName" class="form-control" placeholder="Фамилия" />
@@ -51,4 +54,11 @@ function getFormApplicant() {
 </form>
   `;
   mainColumnRight.appendChild(addUserEl);
+
+  const btnCloseForm = document.getElementById('btn-close-form');
+  btnCloseForm.onclick = () => {
+    const formAddApplicant = document.querySelector('.formAddApplicant');
+    formAddApplicant.remove();
+    location.assign('/');
+  };
 }

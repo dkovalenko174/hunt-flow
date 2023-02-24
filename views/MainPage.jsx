@@ -58,7 +58,16 @@ function MainPage({ appl, name }) {
 
                 {appl.map((user) => (
                   <div key={user.id} data-id={user.id} id="user__preview" className="user__preview d-flex flex-rows align-items-center justify-content-start p-3 gap-3">
-                    <div className="user__preview-foto" />
+                    <div
+                      className="user__preview-foto"
+                      style={
+                      {
+                        backgroundImage: `url(${user.applPhoto})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                      }
+                    }
+                    />
                     <div className="user__preview-ref">
                       <div className="preview-ref-fio">
                         {user.applName}
