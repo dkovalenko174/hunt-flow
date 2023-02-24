@@ -24,6 +24,26 @@ function getFormApplicant() {
         <input type="email" name="applEmail" class="form-control" placeholder="Эл.почта" />
     </div>
   </div>
+<!--  Start Disapbe -->
+ <fieldset disabled>
+  <div class="row mb-3">
+      <div class="col">
+        <input type="text" id="disabledTextInput" class="form-control" placeholder="Позиция">
+      </div>
+      <div class="col">
+        <input type="text" id="disabledTextInput" class="form-control" placeholder="Компания">
+      </div>
+  </div>
+    <div class="row mb-3">
+      <div class="col">
+        <input type="text" id="disabledTextInput" class="form-control" placeholder="Заработная плата">
+      </div>
+      <div class="col">
+        <input type="text" id="disabledTextInput" class="form-control" placeholder="Локация">
+      </div>
+  </div>
+  </fieldset>
+<!--  End Disable-->
   <div class="row mb-3">
     <div class="col">
         <input type="text" name="experience" class="form-control" placeholder="Опыт" />

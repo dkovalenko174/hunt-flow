@@ -37,6 +37,7 @@ async function getUserPreview(event) {
         </div>
       </div>
       </div>
+      <div id="edit_avatar" class="row edit_avatar"></div>
       <div class="row p-2">
         <div class="user__card-events p-4">
           <div class="card-events-stage d-flex align-items-start pb-2">
@@ -87,6 +88,30 @@ async function getUserPreview(event) {
       </div>
 `;
     // console.log(result);
+    const cardRefFoto = document.getElementById('card-ref-foto');
+    cardRefFoto.addEventListener('click', () => {
+      const editAvatarEL = document.getElementById('edit_avatar');
+      const inputEl = document.createElement('div');
+      inputEl.innerHTML = `
+        <div class="row mb-2 justify-content-end">
+            <button id="btn-close-form-avatar" type="button" class="btn-close" aria-label="Close"></button>
+        </div>
+        <form class="row d-flex justify-content-end">
+            <div class="col-10">
+              <input class="form-control" name="image" type="file" id="formFile">
+            </div>
+            <div class="col-2">
+                <button type="submit" class="btn btn-primary mb-3">Add foto</button>
+            </div>
+          </form>
+      `;
+      editAvatarEL.appendChild(inputEl);
+      const btnCloseFormAvatar = document.getElementById('btn-close-form-avatar');
+      btnCloseFormAvatar.addEventListener('click', () => {
+        inputEl.remove();
+      });
+      console.log(editAvatarEL);
+    });
   } catch (err) {
     console.log('Не могу отправить запрос', err);
   }
