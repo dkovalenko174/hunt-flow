@@ -4,13 +4,16 @@ function getFormApplicant() {
   userCard.remove();
   const addUserEl = document.createElement('div');
   addUserEl.innerHTML = `
-  <form class="formAddApplicant">
+  <form class="formAddApplicant" >
+  <div class="row mb-2 me-1 text-end justify-content-end">
+    <button id="btn-close-form" type="button" class="btn-close" aria-label="Close"></button>
+  </div>
   <div class="row mb-3">
     <div class="col">
       <input type="text" name="applLastName" class="form-control" placeholder="Фамилия" />
     </div>
     <div class="col">
-      <input type="text" name="appName" class="form-control" placeholder="Имя" />
+      <input type="text" name="applName" class="form-control" placeholder="Имя" />
     </div>
   </div>
   <div class="row mb-3">
@@ -19,6 +22,46 @@ function getFormApplicant() {
     </div>
     <div class="col">
         <input type="email" name="applEmail" class="form-control" placeholder="Эл.почта" />
+    </div>
+  </div>
+<!--  Start Disapbe -->
+ <fieldset disabled>
+  <div class="row mb-3">
+      <div class="col">
+        <input type="text" id="disabledTextInput" class="form-control" placeholder="Позиция">
+      </div>
+      <div class="col">
+        <input type="text" id="disabledTextInput" class="form-control" placeholder="Компания">
+      </div>
+  </div>
+    <div class="row mb-3">
+      <div class="col">
+        <input type="text" id="disabledTextInput" class="form-control" placeholder="Заработная плата">
+      </div>
+      <div class="col">
+        <input type="text" id="disabledTextInput" class="form-control" placeholder="Локация">
+      </div>
+  </div>
+  </fieldset>
+<!--  End Disable-->
+  <div class="row mb-3">
+    <div class="col">
+        <input type="text" name="experience" class="form-control" placeholder="Опыт" />
+    </div>
+  
+    <div class="col">
+        <select class="form-select" name="stageId" aria-label="Default select example">
+            <option selected>На каком этапе соискатель</option>
+            <option value="1">Новые</option>
+            <option value="2">Видео интервью</option>
+            <option value="3">У заказчика</option>
+            <option value="4">Интервью с заказчиком</option>
+            <option value="5">Звонок скрининг</option>
+            <option value="6">Офер</option>
+            <option value="7">Принял Офер</option>
+            <option value="8">Выход на работу</option>
+            <option value="9">Отказ</option>
+        </select>
     </div>
   </div>
   <div class="mb-3">
@@ -31,4 +74,11 @@ function getFormApplicant() {
 </form>
   `;
   mainColumnRight.appendChild(addUserEl);
+
+  const btnCloseForm = document.getElementById('btn-close-form');
+  btnCloseForm.onclick = () => {
+    const formAddApplicant = document.querySelector('.formAddApplicant');
+    formAddApplicant.remove();
+    location.assign('/');
+  };
 }

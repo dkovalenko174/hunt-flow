@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
-
+/*@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');*/
+/*@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -51,8 +52,12 @@ body, html {
   height: 82vh;
 }
 
+.formSignUp, .formSignIn label {
+  color: #fff;
+}
+
 .guest__column-right {
-  background-color: rgba(174, 175, 172, 0.94);
+  /*background-color: rgba(174, 175, 172, 0.94);*/
   margin-top: 60px;
   margin-left: 32px;
   padding: 24px;
@@ -113,6 +118,9 @@ a {
 
 
 .main__column-right {
+
+
+
   border-left: 1px solid #322D22;
   width: 100%;
 }
@@ -132,7 +140,7 @@ a {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  border: solid #322D22;
+  border: 1px solid #322D22;
   background-color: rgba(255, 255, 255, 0.4);
 }
 
@@ -155,7 +163,7 @@ a {
 }
 
 .card-ref-foto {
-  border: solid #322D22;
+  border: 1px solid #322D22;
   background-color: rgba(255, 255, 255, 0.4);
   border-radius: 10px;
   width: 160px;
@@ -195,10 +203,13 @@ a {
   height: 3vw;
 }
 
+.card-ref-foto {}
+
 .person-photo {
-  height: 10vh;
-  width: 10vh;
-  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  /*border-radius: %;*/
 }
 
 .person-photo-big {

@@ -1,4 +1,5 @@
-async function getAllUsers() {
+async function filter(event) {
+  event.preventDefault();
   const mainColumnLeftApll = document.querySelector('.main__column-left');
   // Нашли всех детей
   const children = mainColumnLeftApll.childNodes;
@@ -6,14 +7,17 @@ async function getAllUsers() {
   while (mainColumnLeftApll.firstChild) {
     mainColumnLeftApll.removeChild(mainColumnLeftApll.firstChild);
   }
+  const { id } = event.target;
+  // console.log(id);
 
   try {
-    const response = await fetch('/api/allusers');
+    const response = await fetch(`/api/filter/${id}`);
     const result = await response.json();
     // const result = await response.status;
     // console.log(result);
     mainColumnLeftApll.innerHTML = `
       ${result.map((user) => (
+
     `<div key=${user.id} data-id=${user.id} id="user__preview" class="row m-2 p-4 ps-2 user__preview">
         <div class="col-3">
             <div class="user__preview-foto" style="background-image: url(${user.applPhoto}); background-size: cover; background-position: center;"></div>
@@ -27,16 +31,6 @@ async function getAllUsers() {
             </div>
         </div>
     </div>`
-    // `<div key=${user.id} data-id=${user.id} id="user__preview" class="user__preview d-flex flex-rows align-items-center justify-content-start p-3 gap-2">
-    // `<div key=${user.id} data-id=${user.id} id="user__preview" class="user__preview row p-3 gap-2">
-    //       <div class="user__preview-foto" style="background-image: url(${user.applPhoto}); background-size: cover; background-position: center;></div>
-    //       <div class="preview-ref-fio">${user.applName} ${user.applLastName}</div>
-    //       <div class="user__preview-ref">
-    //         <div class="preview-ref-position">Java Developer</div>
-    //         <!-- <div class="preview-ref-company">AllSoft</div> -->
-    //       </div>
-    //     </div>`
-
   )).join('')}
     `;
   } catch (error) {
